@@ -1,0 +1,50 @@
+.prediction-form-container {
+    width: 600px;
+    margin: 30px auto 70px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h2 {
+    text-align: center;
+    color: #1e2f60;
+    
+}
+.form-group {
+    margin: 0px 50px 15px 20px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #1e2f60;
+    font-size: 20px;
+}
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #1e2f60;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.8); 
+}
+input[type="text"]:focus, input[type="number"]:focus {
+    border-color: #1e2f60;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+.btn {
+    display: block;
+    padding: 15px 70px;
+    background-color: #1e2f60;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    margin: 40px auto 20px;
+}
+.btn:hover {
+    background-color: #1180f6;
+}

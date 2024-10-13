@@ -1,0 +1,22 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+
+{% load static %}
+<title>MediCare - Login Page</title>
+<link rel="stylesheet" href="{% static 'css/login_style.css' %}">
+
+    <div class="login-container">
+        {% for message in messages %}
+            <div class="message"><h2>{{ message }}</h2></div>
+        {% endfor %} 
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Enter username" required><br>
+            <input type="password" name="password" placeholder="Enter password" required><br>
+            <button type="submit">Login</button>
+            <br>
+            <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+        </form>
+    </div>
+{% endblock %}

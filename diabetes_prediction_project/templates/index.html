@@ -1,0 +1,191 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare</title>
+    <link rel="stylesheet" href="{% static 'css/index_style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <style>
+        .background-section {
+            background-image: url("{% static 'images/home-banner.jpg' %}"); 
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: left;
+            padding: 0 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">MediCare</div>
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'contact' %}">Contact</a>
+            <a href="{% url 'about_us' %}">About us</a>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu">
+                <h3 class="name-h3"><img src="{% static 'images/profile.png' %}" alt="Profile Icon"> {{ username }}</h3>
+                <a href="{% url 'logout' %}">Logout</a>
+            </div>
+        </nav>
+    </header>
+    <div class="background-section">
+        <div class="content">
+            <h3>Empower Your Health</h3>
+            <h1>Take Charge of Your Diabetes Risk with Our AI-powered Prediction</h1>
+            <p>Did you know millions of people are living with undiagnosed diabetes? Even a small risk can lead to serious health problems.</p>
+            <div class="welcome-message"><h2>Welcome, {{ username }} !</h2></div>
+        </div>
+    </div>
+
+    <div class="prediction-container">
+        <h2>Diabetes Prediction System</h2>
+        <p>Enter your health data to get an instant prediction and take control of your health.</p>
+        <button onclick="redirectToPrediction()">Get Prediction</button>
+    </div>
+
+    <div class="remedy-container">
+        <h1>Natural Remedies for Managing Diabetes</h1>
+        <div class="remedy-section">
+            <div class="columns">
+                <div class="column">
+                    <h2>Healthy Diet</h2>
+                    <img src="{% static 'images/diet.jpg' %}" alt="Healthy Food">
+                    <p>Incorporate a variety of fruits, vegetables, whole grains, lean proteins, and healthy fats into your diet. Reduce intake of sugary drinks, sweets, and refined carbohydrates. Include more fiber in your diet, such as whole grains, beans, and legumes, which help regulate blood sugar levels.</p>
+                </div>
+                <div class="column">
+                    <h2>Regular Exercise</h2>
+                    <img src="{% static 'images/exercise.jpg' %}" alt="Exercise">
+                    <p>Aim for at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity per week. Include strength training exercises at least twice a week to build muscle mass and improve insulin sensitivity. Avoid prolonged periods of inactivity. Take breaks to move around if you have a sedentary job.</p>
+                </div>
+            </div>
+        </div>
+        <div class="remedy-section">
+            <div class="columns">
+                <div class="column">
+                    <h2>Maintain a Healthy Weight</h2>
+                    <img src="{% static 'images/weight.jpg' %}" alt="Healthy Weight">
+                    <p>Achieve and maintain a healthy weight through a combination of diet and exercise. Keep track of your body mass index (BMI) and waist circumference as indicators of healthy weight.</p>
+                </div>
+                <div class="column">
+                    <h2>Regular Check-Ups</h2>
+                    <img src="{% static 'images/checkup.jpg' %}" alt="Check-Ups">
+                    <p>Get regular check-ups and screenings for blood sugar levels, especially if you have risk factors for diabetes. Keep your blood pressure within a healthy range, as high blood pressure can increase diabetes risk.</p>
+                </div>
+            </div>
+        </div>
+        <div class="remedy-section">
+            <div class="columns">
+                <div class="column">
+                    <h2>Stress Management</h2>
+                    <img src="{% static 'images/stress.jpg' %}" alt="Stress Management">
+                    <p>Practice stress-reducing activities like yoga, meditation, deep breathing exercises, or hobbies you enjoy. Ensure you get 7-9 hours of quality sleep per night to help regulate hormones and blood sugar levels.</p>
+                </div>
+                <div class="column">
+                    <h2>Hydration and Supplementation</h2>
+                    <img src="{% static 'images/hydration.jpg' %}" alt="Hydration">
+                    <p>Drink plenty of water throughout the day to stay hydrated and help your body function properly. Avoid sugary drinks and opt for water, herbal teas, or other low-calorie beverages. Ensure you get enough essential vitamins and minerals through your diet or supplements if needed. Consult your doctor before starting any supplements.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-container">
+        <section class="faq-section">
+            <div class="faq-header">Frequently Asked Questions</div>
+            <div class="faq-item">
+                <div class="faq-question">How accurate is the prediction tool?</div>
+                <div class="faq-answer"><p>The prediction tool uses advanced algorithms to provide accurate results based on the data inputted by the user.</p></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is support available around the clock?</div>
+                <div class="faq-answer"><p>Yes, our support team is available 24/7 to assist you with any queries or issues you may have.</p></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Can I trust the predictions made?</div>
+                <div class="faq-answer"><p>Our prediction tool is designed with precision and reliability, ensuring that you can trust the results it provides.</p></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How can I improve my health outcomes?</div>
+                <div class="faq-answer"><p>Improving your health outcomes involves following a balanced diet, regular exercise, and consulting with healthcare professionals.</p></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is the tool easy to use?</div>
+                <div class="faq-answer"><p>Our user-friendly interface ensures a seamless experience for predicting your diabetes risk.</p></div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h6>About Us</h6>
+                    <p> Our mission is to empower individuals with the knowledge and tools needed to take control of their health, specifically focusing on diabetes.</p>
+                </div>
+                <div class="col">
+                    <h6>Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'about_us' %}">About Us</a></li>
+                        <li><a href="{% url 'services' %}">Services</a></li>
+                        <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h6>Follow Us</h6>
+                    <ul class="social-icons">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 MediCare. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("dropdown-menu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+
+        function redirectToPrediction() {
+            window.location.href = "{% url 'predict' %}";
+        }
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                // Toggle active class
+                item.classList.toggle('active');
+                // Toggle visibility of answer
+                var answer = item.nextElementSibling;
+                if (answer.style.display === "block") {
+                    answer.style.display = "none";
+                } else {
+                    answer.style.display = "block";
+                }
+            })
+        })
+    </script>
+</body>
+</html>

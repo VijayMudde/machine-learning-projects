@@ -1,0 +1,45 @@
+.remedy-container {
+    width: 80%;
+    margin: 20px auto;
+    overflow: hidden;
+}
+.remedy-section {
+    padding: 20px 0;
+}
+.remedy-section h2 {
+    color: #0073e6;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.remedy-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.remedy-section p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.column {
+    flex: 1;
+    padding: 10px;
+    min-width: 300px;
+}
+.column img {
+    width: 100%;
+    border-radius: 5px;
+}
+.list-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.list-item i {
+    color: #0073e6;
+    margin-right: 10px;
+}

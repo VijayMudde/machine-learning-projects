@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+}
+.register-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h2{
+   margin-left: 100px;
+}
+.message {
+    color: red;
+    font-weight: bold;
+    background-color: #3e48a4;
+    border: 2px solid black;
+    padding: 15px;
+}
+input, button {
+    width: calc(100% - 60px); 
+    padding: 10px;
+    margin: 10px 20px 30px; 
+}
+button {
+    background-color: #1e2f60;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #3655b3;
+}

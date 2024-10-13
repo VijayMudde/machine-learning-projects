@@ -1,0 +1,43 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+{% load static %}
+<title>MediCare - About us</title>
+<link rel="stylesheet" href="{% static 'css/about_style.css' %}">
+  
+    <div class="about-us-container">
+        <div class="about-us-div-section">
+            <h2>About Us</h2>
+            <p>Welcome to MediCare, your reliable source for diabetes prediction and management. Our mission is to empower individuals with the knowledge and tools needed to take control of their health, specifically focusing on diabetes.</p>
+        </div>
+        <div class="about-us-div-section">
+            <h2>Our Mission</h2>
+            <p>At MediCare, we believe that early detection and proactive management of diabetes can significantly improve the quality of life. Our goal is to provide an easy-to-use, accurate, and reliable platform for predicting the likelihood of diabetes, enabling users to take timely action and make informed decisions about their health.</p>
+        </div>
+        <div class="about-us-div-section">
+            <h2>What We Do</h2>
+            <p>We leverage the power of machine learning and data science to deliver a cutting-edge diabetes prediction model. Our platform analyzes various health metrics and lifestyle factors to predict the risk of diabetes, helping users identify potential health concerns early.</p>
+        </div>
+        <div class="about-us-div-section">
+            <h2>Our Technology</h2>
+            <p>Our diabetes prediction model is built using advanced machine learning algorithms. Here's a brief overview of our process:</p>
+            <ul>
+                <li><strong>Data Collection:</strong> We gather data from reliable sources to train our prediction model. The dataset includes various health metrics such as glucose levels, blood pressure, BMI, and more.</li>
+                <li><strong>Data Processing:</strong> Our data scientists clean and preprocess the data to ensure accuracy and consistency. This includes handling missing values, scaling features, and selecting the most relevant variables.</li>
+                <li><strong>Model Training:</strong> We use the K-Nearest Neighbors (KNN) algorithm to train our prediction model. This involves dividing the data into training and testing sets, and fine-tuning the model for optimal performance.</li>
+                <li><strong>Prediction and Accuracy:</strong> Our model provides predictions on the likelihood of diabetes based on the input data. We continually evaluate and improve the model to ensure high accuracy and reliability.</li>
+                <li><strong>User-Friendly Interface:</strong> Our platform is designed to be user-friendly, making it easy for anyone to use. Simply input your health metrics, and our model will provide you with a prediction and actionable insights.</li>
+            </ul>
+        </div>
+        <div class="about-us-div-section">
+            <h2>Our Team</h2>
+            <p>MediCare is developed by a dedicated team of data scientists, health professionals, and software engineers. Our team is passionate about using technology to improve health outcomes and is committed to maintaining the highest standards of accuracy and user satisfaction.</p>
+        </div>
+        <div class="about-us-div-section">
+            <h2>Contact Us</h2>
+            <p>We value your feedback and are here to assist you with any questions or concerns. Feel free to reach out to us at <a href="mailto:contact@MediCare.com">contact@MediCare.com</a>.</p>
+            <p>Thank you for choosing MediCare. Together, we can make a difference in diabetes management and prevention.</p>
+        </div>
+    </div>
+   
+{% endblock %}

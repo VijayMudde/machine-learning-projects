@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+.about-us-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+h1 {
+    margin: 0;
+}
+h2 {
+    color: #1e2f60;
+}
+.about-us-div-section {
+    margin-bottom: 20px;
+}

@@ -1,0 +1,72 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+{% load static %}
+
+<title>Diabetes Prediction Form</title>
+<link rel="stylesheet" href="{% static 'css/predict_style.css' %}">
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-image: url("{% static 'images/diabetes-check1.jpg' %}");
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+
+<div class="prediction-form-container">
+    <h2>Diabetes Prediction Form</h2>
+    <form id="predictionForm" action="{% url 'prediction' %}" method="GET">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="pregnancies">Pregnancies</label>
+            <input type="number" id="pregnancies" name="pregnancies" placeholder="Enter number of pregnancies">
+        </div>
+        <div class="form-group">
+            <label for="glucose">Glucose</label>
+            <input type="number" id="glucose" name="glucose" placeholder="Enter glucose level">
+        </div>
+        <div class="form-group">
+            <label for="blood_pressure">Blood Pressure</label>
+            <input type="number" id="blood_pressure" name="blood_pressure" placeholder="Enter blood pressure">
+        </div>
+        <div class="form-group">
+            <label for="skin_thickness">Skin Thickness</label>
+            <input type="number" id="skin_thickness" name="skin_thickness" placeholder="Enter skin thickness">
+        </div>
+        <div class="form-group">
+            <label for="insulin">Insulin</label>
+            <input type="number" id="insulin" name="insulin" placeholder="Enter insulin level">
+        </div>
+        <div class="form-group">
+            <label for="bmi">BMI</label>
+            <input type="number" step="0.1" id="bmi" name="bmi" placeholder="Enter BMI">
+        </div>
+        <div class="form-group">
+            <label for="diabetes_pedigree_function">Diabetes Pedigree Function</label>
+            <input type="number" step="0.01" id="diabetes_pedigree_function" name="diabetes_pedigree_function" placeholder="Enter diabetes pedigree function">
+        </div>
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" placeholder="Enter age">
+        </div>
+        <button type="submit" class="btn">Predict</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('predictionForm').addEventListener('submit', function(event) {
+        var inputs = document.querySelectorAll('#predictionForm input[type="number"]');
+        for (var i = 0; i < inputs.length; i++) {
+            if (inputs[i].value === '') {
+                alert('Please fill out all fields');
+                event.preventDefault();
+                return false;
+            }
+        }
+    });
+</script>
+
+{% endblock %}

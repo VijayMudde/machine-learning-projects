@@ -1,0 +1,35 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block content %}
+
+<title>Prediction Result</title>
+<link rel="stylesheet" href="{% static 'css/result_style.css' %}">
+<style>
+    .high-risk-bg {
+        background-image: url("static/images/high_risk.jpg");
+        height: 700px;
+    }
+    .low-risk-bg {
+        background-image: url("static/images/no_worry.jpg");
+        height: 700px;
+    }
+</style>
+
+    <div class="result-container {% if result == 1 %}high-risk-bg{% else %}low-risk-bg{% endif %}">
+        <div class="result-text">
+            {% csrf_token %}
+            <h1>Prediction Result</h1>
+            {% if result == 1 %}
+                <p>The prediction indicates a <span class="result positive">high risk</span> of diabetes.</p>
+                <h3>Please Consult a Doctor !</h3>
+            {% else %}
+                <p>The prediction indicates a <span class="result negative">low risk</span> of diabetes.</p>
+                
+                <h3>No Worries !</h3>
+            {% endif %}
+        </div>
+    </div>
+
+
+{% endblock %}

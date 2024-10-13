@@ -1,0 +1,37 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+    {% load static %}
+    <title>MediCare - Services</title>
+    <link rel="stylesheet" href="{% static 'css/services_style.css' %}">
+
+
+    <div class="container">
+        <div class="section">
+            <h2>Our Services</h2>
+            <p>At MediCare, we offer a range of services designed to help you understand and manage your risk of diabetes. Our advanced machine learning model and user-friendly platform provide you with the tools and information needed to take control of your health.</p>
+        </div>
+        <div class="section">
+            <h2>Diabetes Risk Prediction</h2>
+            <p>Our core service is diabetes risk prediction. By analyzing various health metrics and lifestyle factors, our machine learning model predicts your likelihood of developing diabetes. This allows you to take proactive steps to manage your health.</p>
+        </div>
+        <div class="section">
+            <h2>Personalized Health Insights</h2>
+            <p>Based on your prediction results, we provide personalized health insights and recommendations. These insights help you understand the key factors affecting your diabetes risk and offer practical advice on how to mitigate them.</p>
+        </div>
+        <div class="section">
+            <h2>Data Analysis and Reporting</h2>
+            <p>We offer detailed data analysis and reporting services to help you track your health over time. Our reports include visualizations and summaries of your health metrics, making it easy to monitor changes and progress.</p>
+        </div>
+        <div class="section">
+            <h2>Educational Resources</h2>
+            <p>Our platform includes a wealth of educational resources on diabetes prevention and management. From articles and guides to tips and best practices, we provide the information you need to make informed health decisions.</p>
+        </div>
+        <div class="section">
+            <h2>Community Support</h2>
+            <p>Join our community of users who are also taking steps to manage their diabetes risk. Share your experiences, seek advice, and find support from others who understand the challenges and successes of maintaining a healthy lifestyle.</p>
+        </div>
+    </div>
+
+
+{% endblock %}
